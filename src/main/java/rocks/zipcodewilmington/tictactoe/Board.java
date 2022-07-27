@@ -5,6 +5,7 @@ package rocks.zipcodewilmington.tictactoe;
  */
 public class Board {
     Character[][] board;
+
     public Board(Character[][] matrix) {
         this.board = matrix;
     }
@@ -60,9 +61,9 @@ public class Board {
     }
 
     public Boolean isTie() {
-   //tie = no one wins
-    //isInFavorX wins
-    //isInFavorO wins
+        //tie = no one wins
+        //isInFavorX wins
+        //isInFavorO wins
 
         if (!isInFavorOfX() && !isInFavorOfO()) {
             return true;
@@ -71,7 +72,12 @@ public class Board {
     }
 
     public String getWinner() {
-        return null;
+        //tic-tac-toe, three in a row
+        if (isInFavorOfX()) {
+            return "X";
+        } else if (isInFavorOfO()) {
+            return "O";
+        }
+        return "";
     }
-
 }
